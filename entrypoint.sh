@@ -16,7 +16,7 @@ elif [ "$role" = "scheduler" ]; then
     while [ true ]
     do
       php /var/www/artisan schedule:run --verbose --no-interaction &
-      sleep 60
+      sleep 5
     done
 
 else
