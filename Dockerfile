@@ -1,4 +1,4 @@
-FROM php:alpine
+FROM php:7.2.14-alpine
 LABEL maintainer="yudada <yudada0312@gmail.com>"
 
 RUN apk update && apk upgrade && apk add bash git
