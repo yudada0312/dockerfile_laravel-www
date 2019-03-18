@@ -15,8 +15,14 @@ elif [ "$role" = "scheduler" ]; then
 
     while [ true ]
     do
-      php artisan schedule:run --verbose --no-interaction &
-      sleep 5
+      t=`date +%-S`
+      if [ $(($t%10)) = "0" ]; then
+        date +"%Y-%m-%d %T"
+        php artisan schedule:run &
+        sleep 10
+        else
+        sleep 1
+      fi
     done
 
 else
