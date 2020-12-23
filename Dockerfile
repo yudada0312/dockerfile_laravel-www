@@ -12,6 +12,7 @@ COPY entrypoint.sh /var
 
 RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install bcmath
+RUN apk add libxml2-dev && docker-php-ext-install soap
 # install gd lib
 RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev && \
   docker-php-ext-configure gd \
